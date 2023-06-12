@@ -9,35 +9,10 @@ let isgameover = false;
 const changeTurn = ()=>{
     return turn === "X"? "0": "X"
 }
-// Function to prompt the user and validate the input
-function getPlayerName(player) {
-  let name = prompt(`Enter a name for the ${player} player:`);
-  while (name !== playerX && name !== playerO) {
-    alert("Invalid player name. Please enter a valid name.");
-    name = prompt(`Enter a name for the ${player} player:`);
-  }
-  return name;
-}
 
-// Prompt the user for player names
-const playerX = getPlayerName("X");
-const playerO = getPlayerName("O");
 
-// Function to prompt the user and determine who plays first
-function determineFirstPlayer() {
-  let firstPlayer = prompt(`Who plays first, ${playerX} or ${playerO}?`);
-  while (firstPlayer !== playerX && firstPlayer !== playerO) {
-    alert("Invalid player name. Please enter a valid name.");
-    firstPlayer = prompt(`Who plays first, ${playerX} or ${playerO}?`);
-  }
-  return firstPlayer;
-}
 
-// Determine the first player
-const currentPlayer = determineFirstPlayer();
 
-// Display the current player
-console.log(`Current player: ${currentPlayer}`);
 
 // Function to check for a win
 const checkWin = ()=>{
@@ -64,7 +39,7 @@ const checkWin = ()=>{
 }
 
 // Game Logic
-// music.play()
+music.play()
 let boxes = document.getElementsByClassName("box");
 Array.from(boxes).forEach(element =>{
     let boxtext = element.querySelector('.boxtext');
